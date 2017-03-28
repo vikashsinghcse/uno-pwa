@@ -651,6 +651,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_css__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__home_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cards_cards_jsx__ = __webpack_require__(13);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -658,6 +659,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -677,7 +679,7 @@ var Home = function (_Component) {
             return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
                 'div',
                 null,
-                'hi1'
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__cards_cards_jsx__["a" /* default */], null)
             );
         }
     }]);
@@ -703,6 +705,88 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(__webpack_
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cards_css__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cards_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__cards_css__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Cards = function (_Component) {
+    _inherits(Cards, _Component);
+
+    function Cards() {
+        _classCallCheck(this, Cards);
+
+        return _possibleConstructorReturn(this, (Cards.__proto__ || Object.getPrototypeOf(Cards)).apply(this, arguments));
+    }
+
+    _createClass(Cards, [{
+        key: 'render',
+        value: function render() {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                'div',
+                { className: 'cards' },
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                    'div',
+                    { className: 'cards__inner' },
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                        'span',
+                        { className: 'cards__number cards__number-top' },
+                        '5'
+                    ),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                        'div',
+                        { className: 'cards__oval' },
+                        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                            'span',
+                            { className: 'cards__number cards_number-center' },
+                            '5'
+                        )
+                    ),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                        'span',
+                        { className: 'cards__number cards__number-bottom' },
+                        '5'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Cards;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Cards);
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
