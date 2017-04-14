@@ -1,16 +1,23 @@
 import {h, Component} from 'preact';
+import cx from 'classnames';
 import './cards.css';
 
 export default class Cards extends Component {
     render(){
         return(
             <div className="cards">
-                <div className="cards__inner">
-                    <span className="cards__number cards__number-top">5</span>
+                <div className={cx("cards__inner","cards__inner--type-" + this.props.card.color)}>
+                    <span className="cards__number cards__number-top">
+											{this.props.card.number}
+										</span>
                     <div className="cards__oval">
-                        <span className="cards__number cards_number-center">5</span>
+                        <span className="cards__number cards_number-center">
+													{this.props.card.number}
+												</span>
                     </div>
-                    <span className="cards__number cards__number-bottom">5</span>
+                    <span className="cards__number cards__number-bottom">
+											{this.props.card.number}
+										</span>
                 </div>
             </div>
         );

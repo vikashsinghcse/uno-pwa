@@ -4,10 +4,15 @@ import Cards from '../cards/cards.jsx';
 
 export default class Home extends Component {
     render(){
-        return(
-            <div>
-                <Cards/>
-            </div>
-        );
+			const card = {
+				color: 'yellow',
+				number: 2,
+				type: 'number'
+			};
+			return(
+					<div>
+							<Cards card={card}/>
+					</div>
+			);
     }
 }

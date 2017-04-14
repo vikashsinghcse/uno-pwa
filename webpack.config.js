@@ -31,7 +31,7 @@ const config = {
         test: /\.css$/,
         loader: extractCSS.extract({
           fallbackLoader: 'style-loader',
-          loader: ['css-loader']
+          loader: ['css-loader', 'postcss-loader']
         }),
       },
       ]

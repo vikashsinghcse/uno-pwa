@@ -10,12 +10,51 @@
 .cards__inner {
     height: 100%;
     width: 100%;
-    background-color: red;
     border-radius: 4px;
     position: relative;
     color: #FFF;
     font-family: helvetica;
     font-style: italic;
+}
+
+.cards__inner--type-yellow{
+	background-color: #FFC107;
+}
+
+.cards__inner--type-yellow .cards__oval{
+    color: #FFC107;
+}
+
+.cards__inner--type-red{
+	background-color: #DD2C00;
+}
+
+.cards__inner--type-red .cards__oval{
+    color: #DD2C00;
+}
+
+.cards__inner--type-black{
+	background-color: #333;
+}
+
+.cards__inner--type-black .cards__oval{
+    color: #333;
+}
+
+.cards__inner--type-blue{
+	background-color: #3D5AFE;
+}
+
+.cards__inner--type-blue .cards__oval{
+    color: #3D5AFE;
+}
+
+.cards__inner--type-green{
+	background-color: #4CAF50;
+}
+
+.cards__inner--type-green .cards__oval{
+    color: #4CAF50;
 }
 
 .cards__oval {
@@ -26,8 +65,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    color: red;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
     text-align: center;
 }
 
@@ -40,7 +79,8 @@
     font-size: 2rem;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .cards__number-top {
