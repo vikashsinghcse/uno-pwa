@@ -5,8 +5,10 @@ import './cards.css';
 export default class Cards extends Component {
     render(){
         return(
-            <div className="cards">
-                <div className={cx("cards__inner","cards__inner--type-" + this.props.card.color)}>
+            <div className={cx("cards", "cards--type-" + this.props.card.type.toLowerCase())} {...this.props}>
+                <div className={cx(
+                  "cards__inner",
+                  "cards__inner--color-" + this.props.card.color.toLowerCase())}>
                     <span className="cards__number cards__number-top">
 											{this.props.card.number}
 										</span>

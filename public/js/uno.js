@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
+/******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/ 		}
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -660,7 +660,8 @@ module.exports = __webpack_amd_options__;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_css__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__home_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cards_cards_jsx__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__players_deck_players_deck_jsx__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_card__ = __webpack_require__(18);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -673,32 +674,35 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var Home = function (_Component) {
-		_inherits(Home, _Component);
+  _inherits(Home, _Component);
 
-		function Home() {
-				_classCallCheck(this, Home);
+  function Home() {
+    _classCallCheck(this, Home);
 
-				return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
-		}
+    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+  }
 
-		_createClass(Home, [{
-				key: 'render',
-				value: function render() {
-						var card = {
-								color: 'yellow',
-								number: 2,
-								type: 'number'
-						};
-						return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-								'div',
-								null,
-								__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__cards_cards_jsx__["a" /* default */], { card: card })
-						);
-				}
-		}]);
+  _createClass(Home, [{
+    key: 'render',
+    value: function render() {
+      var cards = [];
+      for (var i = 1; i < 9; i++) {
+        cards.push(new __WEBPACK_IMPORTED_MODULE_3__base_card__["a" /* default */]({
+          color: __WEBPACK_IMPORTED_MODULE_3__base_card__["a" /* default */].COLOR.GREEN,
+          number: i
+        }));
+      }
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        null,
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__players_deck_players_deck_jsx__["a" /* default */], { cards: cards })
+      );
+    }
+  }]);
 
-		return Home;
+  return Home;
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Home);
@@ -714,6 +718,8 @@ var Home = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cards_css__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cards_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__cards_css__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -740,10 +746,10 @@ var Cards = function (_Component) {
         value: function render() {
             return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
                 'div',
-                { className: 'cards' },
+                _extends({ className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()("cards", "cards--type-" + this.props.card.type.toLowerCase()) }, this.props),
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
                     'div',
-                    { className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()("cards__inner", "cards__inner--type-" + this.props.card.color) },
+                    { className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()("cards__inner", "cards__inner--color-" + this.props.card.color.toLowerCase()) },
                     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
                         'span',
                         { className: 'cards__number cards__number-top' },
@@ -851,6 +857,114 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["render"])(__webpack_
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Card = function Card(_ref) {
+  var color = _ref.color,
+      number = _ref.number,
+      type = _ref.type;
+
+  _classCallCheck(this, Card);
+
+  this.type = type || Card.TYPE.NUMBER;
+  this.number = number || '';
+  this.color = color || Card.COLOR.BLACK;
+};
+
+Card.TYPE = {
+  'ACTION': 'ACTION',
+  'NUMBER': 'NUMBER'
+};
+
+Card.COLOR = {
+  'RED': 'RED',
+  'YELLOW': 'YELLOW',
+  'GREEN': 'GREEN',
+  'BLUE': 'BLUE',
+  'BLACK': 'BLACK'
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Card);
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__players_deck_css__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__players_deck_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__players_deck_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cards_cards_jsx__ = __webpack_require__(3);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var PlayersDeck = function (_Component) {
+  _inherits(PlayersDeck, _Component);
+
+  function PlayersDeck() {
+    _classCallCheck(this, PlayersDeck);
+
+    return _possibleConstructorReturn(this, (PlayersDeck.__proto__ || Object.getPrototypeOf(PlayersDeck)).apply(this, arguments));
+  }
+
+  _createClass(PlayersDeck, [{
+    key: 'render',
+    value: function render() {
+      var degree = 10;
+      if (this.props.cards.length > 18) {
+        degree = 2.5;
+      } else if (this.props.cards.length > 9) {
+        degree = 5;
+      }
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        { className: 'deck', style: "transform: rotateZ(-" + degree / 2 * this.props.cards.length + "deg)" },
+        this.props.cards.map(function (card, index) {
+          return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__cards_cards_jsx__["a" /* default */], { style: "transform: rotateZ(" + degree * index + "deg) translateX(" + index * 15 + "px);", card: card });
+        })
+      );
+    }
+  }]);
+
+  return PlayersDeck;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (PlayersDeck);
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

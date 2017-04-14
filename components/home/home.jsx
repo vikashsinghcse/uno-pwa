@@ -1,17 +1,20 @@
 import {h, Component} from 'preact';
 import './home.css';
-import Cards from '../cards/cards.jsx';
+import PlayersDeck from '../players-deck/players-deck.jsx';
+import Card from '../../base/card';
 
 export default class Home extends Component {
     render(){
-			const card = {
-				color: 'yellow',
-				number: 2,
-				type: 'number'
-			};
+      let cards = [];
+      for(var i=1; i< 9; i++) {
+        cards.push(new Card({
+          color: Card.COLOR.GREEN,
+          number: i
+        }));
+      }
 			return(
 					<div>
-							<Cards card={card}/>
+							<PlayersDeck cards={cards}/>
 					</div>
 			);
     }

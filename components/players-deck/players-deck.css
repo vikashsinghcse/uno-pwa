@@ -1,0 +1,10 @@
+.deck {
+  position: relative;
+  width: 240px;
+  height: 50px;
+  transform: rotateZ(-45deg);
+  .cards {
+    position: absolute;
+    transform-origin: bottom;
+  }
+}
