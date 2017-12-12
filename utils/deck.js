@@ -34,6 +34,16 @@ export function newDeck() {
   return cards;
 }
 
+export function getShuffledDeck(deck) {
+  const newDeck = [];
+  for(let i=0; i<108; i++) {
+    const randomIndex = Math.floor(Math.random() * deck.length);
+    newDeck.push(deck[randomIndex]);
+    deck = [...deck.slice(0, randomIndex - 1), ...deck.slice(randomIndex, deck.length)];
+  }
+  return newDeck;
+}
+
 function giveCopies(card, copy){
   const cards=[];
   for( let i=0; i< copy; i++) {
