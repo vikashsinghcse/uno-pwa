@@ -51,3 +51,11 @@ function giveCopies(card, copy){
   }
   return cards;
 }
+
+function isValidMove(currentColor, currentValue, newCard, isBlackAllowed){
+  if (currentColor === newCard.color || currentValue === newCard.value || (isBlackAllowed && newCard.color === 'BLACK')) {
+    return true;
+  } else {
+    return false;
+  }
+}
